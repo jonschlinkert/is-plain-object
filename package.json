@@ -1,0 +1,47 @@
+{
+  "name": "is-plain-object",
+  "description": "Return `true` if the given `value` is an object created by the `Object` constructor.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/is-plain-object",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonschlinkert/is-plain-object.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/is-plain-object/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jonschlinkert/is-plain-object/blob/master/LICENSE-MIT"
+    }
+  ],
+  "keywords": [
+    "object",
+    "is",
+    "is-object",
+    "isobject",
+    "plain",
+    "value",
+    "typeof",
+    "javascript",
+    "check",
+    "type"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "devDependencies": {
+    "verb": "~0.2.6",
+    "chai": "~1.9.1",
+    "mocha": "*"
+  }
+}

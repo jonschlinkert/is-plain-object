@@ -3,29 +3,17 @@
 <head>
 <meta charset="utf-8">
 <title>Cross-Realm isPlainObject()</title>
+<script src="parseFixtures.js"></script>
 <script>
 
-function Foo() {this.abc = {};};
-
-// Should return true with isPlainObject()
-var trues = [
-  Object.create({}),
-  Object.create(Object.prototype),
-  {foo: 'bar'},
-  {}
-];
-
-// Should return false with isPlainObject()
-var falses = [
-  /foo/,
-  function() {},
-  1,
-  ['foo', 'bar'],
-  [],
-  new Foo,
-  null,
-  Object.create(null)
-];
+function getJSON(callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'fixtures.json');
+  xhr.onload = function() {
+    callback( parseFixtures( JSON.parse(this.response) ) );
+  };
+  xhr.send();
+}
 
 </script>
 </head>

@@ -17,9 +17,7 @@ function isObjectObject(o) {
 module.exports = function isPlainObject(o) {
   var ctor,prot;
   
-  if (isObjectObject(o) === false || o === o.window) {
-    return false;
-  }
+  if (isObjectObject(o) === false) return false;
   
   // If has modified constructor
   ctor = o.constructor;

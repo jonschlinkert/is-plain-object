@@ -13,7 +13,7 @@
 <div id="mocha"></div>
 <script>
 
-var iframe,iframeFixtures;
+var iframe,iframeWindow;
 var testArea = document.getElementById('mocha');
 
 describe('Cross-Realm Browser Tests', function() {
@@ -21,10 +21,8 @@ describe('Cross-Realm Browser Tests', function() {
     iframe = document.createElement('iframe');
     iframe.src = 'browser-iframe.html';
     iframe.onload = function() {
-      this.contentWindow.getJSON( function(fixtures) {
-        iframeFixtures = fixtures;
-        done();
-      });
+      iframeWindow = this.contentWindow;
+      done();
     };
     testArea.appendChild(iframe);
   });
@@ -36,7 +34,7 @@ describe('Cross-Realm Browser Tests', function() {
   
   describe('without isPlainObject', function() {
     it('should not work with `instanceof`', function(done) {
-      iframeFixtures.trues.forEach( function(fixture) {
+      iframeWindow.trues.forEach( function(fixture) {
         expect(fixture).to.not.be.instanceOf(Object);
       });
       done();
@@ -45,13 +43,13 @@ describe('Cross-Realm Browser Tests', function() {
   
   describe('with isPlainObject', function() {
     it('should return `true` if the object is created by the `Object` constructor.', function() {
-      iframeFixtures.trues.forEach( function(fixture) {
+      iframeWindow.trues.forEach( function(fixture) {
         expect( isPlainObject(fixture) ).to.be.true;
       });
     });
     
     it('should return `false` if the object is not created by the `Object` constructor.', function() {
-      iframeFixtures.falses.forEach( function(fixture) {
+      iframeWindow.falses.forEach( function(fixture) {
         expect( isPlainObject(fixture) ).to.be.false;
       });
     });

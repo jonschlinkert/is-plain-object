@@ -8,23 +8,26 @@
 'use strict';
 
 var expect = require('chai').expect;
-var fixtures = require('./fixtures.json');
 var isPlainObject = require('../');
-var parseFixtures = require('fs').readFileSync( require('path').resolve(__dirname+'/parseFixtures.js'), {encoding:'utf8'} );
-
-parseFixtures = eval( '(' + parseFixtures + ')' );
-fixtures = parseFixtures(fixtures);
 
 describe('Same-Realm Server Tests', function () {
   it('should return `true` if the object is created by the `Object` constructor.', function() {
-    fixtures.trues.forEach( function(fixture) {
-      expect( isPlainObject(fixture) ).to.be.true;
-    });
+    expect( isPlainObject(Object.create({})) ).to.be.true;
+    expect( isPlainObject(Object.create(Object.prototype)) ).to.be.true;
+    expect( isPlainObject({foo: 'bar'}) ).to.be.true;
+    expect( isPlainObject({}) ).to.be.true;
   });
 
   it('should return `false` if the object is not created by the `Object` constructor.', function() {
-    fixtures.falses.forEach( function(fixture) {
-      expect( isPlainObject(fixture) ).to.be.false;
-    });
+    function Foo() {this.abc = {};};
+
+    expect( isPlainObject(/foo/) ).to.be.false;
+    expect( isPlainObject(function () {}) ).to.be.false;
+    expect( isPlainObject(1) ).to.be.false;
+    expect( isPlainObject(['foo', 'bar']) ).to.be.false;
+    expect( isPlainObject([]) ).to.be.false;
+    expect( isPlainObject(new Foo) ).to.be.false;
+    expect( isPlainObject(null) ).to.be.false;
+    expect( isPlainObject(Object.create(null)) ).to.be.false;
   });
 });

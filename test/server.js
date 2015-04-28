@@ -10,7 +10,7 @@
 var expect = require('chai').expect;
 var isPlainObject = require('../');
 
-describe('Same-Realm Server Tests', function () {
+describe('Same-Realm Server Tests', function() {
   it('should return `true` if the object is created by the `Object` constructor.', function() {
     expect( isPlainObject(Object.create({})) ).to.be.true;
     expect( isPlainObject(Object.create(Object.prototype)) ).to.be.true;

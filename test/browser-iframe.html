@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cross-Realm isPlainObject()</title>
+<script>
+
+function Foo() {this.abc = {};};
+
+// Should return true with isPlainObject()
+var trues = [
+  Object.create({}),
+  Object.create(Object.prototype),
+  {foo: 'bar'},
+  {}
+];
+
+// Should return false with isPlainObject()
+var falses = [
+  /foo/,
+  function() {},
+  1,
+  ['foo', 'bar'],
+  [],
+  new Foo,
+  null,
+  Object.create(null)
+];
+
+</script>
+</head>
+<body></body>
+</html>

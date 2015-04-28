@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cross-Realm isPlainObject()</title>
+<script src="../browser/is-plain-object.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+<script src="../node_modules/mocha/mocha.js"></script>
+<script>mocha.setup('bdd'); expect=chai.expect</script>
+<link rel="stylesheet" href="../node_modules/mocha/mocha.css"/>
+</head>
+<body>
+<div id="mocha"></div>
+<script>
+
+var iframe,iframeWindow;
+var testArea = document.getElementById('mocha');
+
+describe('Cross-Realm Browser Tests', function() {
+  before( function(done) {
+    iframe = document.createElement('iframe');
+    iframe.src = 'browser-iframe.html';
+    iframe.onload = function() {
+      iframeWindow = this.contentWindow;
+      done();
+    };
+    testArea.appendChild(iframe);
+  });
+  
+  after( function(done) {
+    testArea.removeChild(iframe);
+    done();
+  });
+  
+  describe('without isPlainObject', function() {
+    it('should not work with `instanceof`', function(done) {
+      iframeWindow.trues.forEach( function(fixture) {
+        expect(fixture).to.not.be.instanceOf(Object);
+      });
+      done();
+    });
+  });
+  
+  describe('with isPlainObject', function() {
+    it('should return `true` if the object is created by the `Object` constructor.', function() {
+      iframeWindow.trues.forEach( function(fixture) {
+        expect( isPlainObject(fixture) ).to.be.true;
+      });
+    });
+    
+    it('should return `false` if the object is not created by the `Object` constructor.', function() {
+      iframeWindow.falses.forEach( function(fixture) {
+        expect( isPlainObject(fixture) ).to.be.false;
+      });
+    });
+  });
+});
+
+if (window.mochaPhantomJS) mochaPhantomJS.run();
+else mocha.run();
+
+</script>
+</body>
+</html>

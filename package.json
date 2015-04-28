@@ -26,13 +26,21 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "mocha"
+    "browserify": "browserify index.js --standalone isPlainObject | uglifyjs --compress --mangle -o browser/is-plain-object.js",
+    "test_browser": "mocha-phantomjs test/browser.html",
+    "test_node": "mocha test",
+    "test": "npm run test_node && npm run browserify && npm run test_browser"
   },
   "dependencies": {
     "isobject": "^0.2.0"
   },
   "devDependencies": {
-    "mocha": "*"
+    "browserify": "*",
+    "chai": "*",
+    "mocha": "*",
+    "mocha-phantomjs": "*",
+    "phantomjs": "*",
+    "uglify-js": "*"
   },
   "keywords": [
     "object",

@@ -7,6 +7,7 @@
 
 'use strict';
 
+/* deps:mocha */
 var expect = require('chai').expect;
 var isPlainObject = require('../');
 

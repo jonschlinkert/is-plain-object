@@ -1,23 +1,14 @@
 {
   "name": "is-plain-object",
   "description": "Returns true if an object was created by the `Object` constructor.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "homepage": "https://github.com/jonschlinkert/is-plain-object",
-  "author": {
-    "name": "Jon Schlinkert",
-    "url": "https://github.com/jonschlinkert"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/jonschlinkert/is-plain-object.git"
-  },
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/is-plain-object",
   "bugs": {
     "url": "https://github.com/jonschlinkert/is-plain-object/issues"
   },
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/jonschlinkert/is-plain-object/blob/master/LICENSE"
-  },
+  "license": "MIT",
   "files": [
     "index.js"
   ],
@@ -28,11 +19,11 @@
   "scripts": {
     "browserify": "browserify index.js --standalone isPlainObject | uglifyjs --compress --mangle -o browser/is-plain-object.js",
     "test_browser": "mocha-phantomjs test/browser.html",
-    "test_node": "mocha test",
+    "test_node": "mocha",
     "test": "npm run test_node && npm run browserify && npm run test_browser"
   },
   "dependencies": {
-    "isobject": "^0.2.0"
+    "isobject": "^1.0.0"
   },
   "devDependencies": {
     "browserify": "*",
@@ -49,6 +40,9 @@
     "isobject",
     "plain",
     "value",
+    "type",
+    "kind",
+    "kind-of",
     "typeof",
     "javascript",
     "check",

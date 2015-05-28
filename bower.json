@@ -1,26 +1,17 @@
 {
   "name": "is-plain-object",
   "description": "Returns true if an object was created by the `Object` constructor.",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/jonschlinkert/is-plain-object.git"
-  },
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/jonschlinkert/is-plain-object/blob/master/LICENSE"
-  },
+  "repository": "jonschlinkert/is-plain-object",
+  "license": "MIT",
   "homepage": "https://github.com/jonschlinkert/is-plain-object",
   "authors": [
-    {
-      "name": "Jon Schlinkert",
-      "homepage": "https://github.com/jonschlinkert"
-    }
+    "Jon Schlinkert (https://github.com/jonschlinkert)"
   ],
   "main": [
     "index.js"
   ],
   "dependencies": {
-    "isobject": "^0.2.0"
+    "isobject": "^1.0.0"
   },
   "devDependencies": {
     "browserify": "*",
@@ -37,6 +28,9 @@
     "isobject",
     "plain",
     "value",
+    "type",
+    "kind",
+    "kind-of",
     "typeof",
     "javascript",
     "check",

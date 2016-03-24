@@ -30,5 +30,6 @@ describe('Same-Realm Server Tests', function() {
     expect( isPlainObject(new Foo) ).to.be.false;
     expect( isPlainObject(null) ).to.be.false;
     expect( isPlainObject(Object.create(null)) ).to.be.false;
+    expect( isPlainObject(Object.assign(Object.create({foo: "bar"}), {bar: "foo"})) ).to.be.false;
   });
 });

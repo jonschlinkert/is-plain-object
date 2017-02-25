@@ -23,7 +23,7 @@
     "test": "npm run test_node && npm run browserify && npm run test_browser"
   },
   "dependencies": {
-    "isobject": "^1.0.0"
+    "isobject": "^3.0.0"
   },
   "devDependencies": {
     "browserify": "*",

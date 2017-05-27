@@ -4,6 +4,10 @@
   "version": "2.0.1",
   "homepage": "https://github.com/jonschlinkert/is-plain-object",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)",
+    "Steven Vachon (https://svachon.com)"
+  ],
   "repository": "jonschlinkert/is-plain-object",
   "bugs": {
     "url": "https://github.com/jonschlinkert/is-plain-object/issues"
@@ -26,26 +30,24 @@
     "isobject": "^3.0.0"
   },
   "devDependencies": {
-    "browserify": "*",
-    "chai": "*",
-    "mocha": "*",
-    "mocha-phantomjs": "*",
-    "phantomjs": "*",
-    "uglify-js": "*"
+    "browserify": "^14.3.0",
+    "mocha": "^3.4.2",
+    "mocha-phantomjs": "^4.1.0",
+    "phantomjs": "^2.1.7",
+    "uglify-js": "^3.0.12"
   },
   "keywords": [
-    "object",
+    "check",
     "is",
     "is-object",
     "isobject",
-    "plain",
-    "value",
-    "type",
+    "javascript",
     "kind",
     "kind-of",
+    "object",
+    "plain",
+    "type",
     "typeof",
-    "javascript",
-    "check",
-    "type"
+    "value"
   ]
 }

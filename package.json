@@ -24,7 +24,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "browserify": "browserify index.js --standalone isPlainObject | uglifyjs --compress --mangle -o browser/is-plain-object.js",
+    "browserify": "mkdir browser && browserify index.js --standalone isPlainObject | uglifyjs --compress --mangle -o browser/is-plain-object.js",
     "test_browser": "mocha-headless-chrome --args=disable-web-security -f test/browser.html",
     "test_node": "mocha",
     "test": "npm run test_node && npm run browserify && npm run test_browser"

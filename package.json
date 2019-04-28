@@ -24,8 +24,8 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "browserify": "browserify index.js --standalone isPlainObject | uglifyjs --compress --mangle -o browser/is-plain-object.js",
-    "test_browser": "mocha-phantomjs test/browser.html",
+    "browserify": "mkdir browser && browserify index.js --standalone isPlainObject | uglifyjs --compress --mangle -o browser/is-plain-object.js",
+    "test_browser": "mocha-headless-chrome --args=disable-web-security -f test/browser.html",
     "test_node": "mocha",
     "test": "npm run test_node && npm run browserify && npm run test_browser"
   },
@@ -34,11 +34,10 @@
   },
   "devDependencies": {
     "browserify": "^14.4.0",
-    "chai": "^4.0.2",
+    "chai": "^4.2.0",
     "gulp-format-md": "^1.0.0",
-    "mocha": "^3.4.2",
-    "mocha-phantomjs": "^4.1.0",
-    "phantomjs": "^2.1.7",
+    "mocha": "^6.1.4",
+    "mocha-headless-chrome": "^2.0.2",
     "uglify-js": "^3.0.24"
   },
   "keywords": [

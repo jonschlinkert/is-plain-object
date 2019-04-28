@@ -5,13 +5,8 @@ os:
 language: node_js
 node_js:
   - node
-  - iojs
+  - '12'
+  - '10'
   - '8'
-  - '7'
-  - '6'
-  - '5'
-  - '4'
-  - '0.12'
-  - '0.10'
 git:
   depth: 10

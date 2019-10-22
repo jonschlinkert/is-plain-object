@@ -7,15 +7,17 @@
 
 import isObject from 'isobject';
 
+var toString = Object.prototype.toString;
+var hasProp = Object.prototype.hasOwnProperty;
+
 function isObjectObject(o) {
-  return isObject(o) === true
-    && Object.prototype.toString.call(o) === '[object Object]';
+  return isObject(o) === true && toString.call(o) === '[object Object]';
 }
 
 export default function isPlainObject(o) {
-  var ctor,prot;
-
   if (isObjectObject(o) === false) return false;
+
+  var ctor, prot;
 
   // If has modified constructor
   ctor = o.constructor;
@@ -26,9 +28,7 @@ export default function isPlainObject(o) {
   if (isObjectObject(prot) === false) return false;
 
   // If constructor does not have an Object-specific method
-  if (prot.hasOwnProperty('isPrototypeOf') === false) {
-    return false;
-  }
+  if (hasProp.call(prot, 'isPrototypeOf') === false) return false;
 
   // Most likely a plain Object
   return true;

@@ -17,14 +17,12 @@ function isObjectObject(o) {
 export default function isPlainObject(o) {
   if (isObjectObject(o) === false) return false;
 
-  var ctor, prot;
-
   // If has modified constructor
-  ctor = o.constructor;
+  var ctor = o.constructor;
   if (typeof ctor !== 'function') return false;
 
   // If has modified prototype
-  prot = ctor.prototype;
+  var prot = ctor.prototype;
   if (isObjectObject(prot) === false) return false;
 
   // If constructor does not have an Object-specific method

@@ -42,7 +42,7 @@
     "isobject": "^4.0.0",
     "mocha": "^6.1.4",
     "mocha-headless-chrome": "^3.1.0",
-    "rollup": "^1.10.1"
+    "rollup": "^2.18.1"
   },
   "keywords": [
     "check",

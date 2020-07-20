@@ -14,6 +14,7 @@ describe('Same-Realm Server Tests', function() {
     assert(isPlainObject(Object.create(Object.prototype)));
     assert(isPlainObject({foo: 'bar'}));
     assert(isPlainObject({}));
+    assert(isPlainObject(Object.create(null)));
   });
 
   it('should return `false` if the object is not created by the `Object` constructor.', function() {
@@ -26,6 +27,5 @@ describe('Same-Realm Server Tests', function() {
     assert(!isPlainObject([]));
     assert(!isPlainObject(new Foo));
     assert(!isPlainObject(null));
-    assert(!isPlainObject(Object.create(null)));
   });
 });

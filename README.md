@@ -1,6 +1,6 @@
 # is-plain-object [![NPM version](https://img.shields.io/npm/v/is-plain-object.svg?style=flat)](https://www.npmjs.com/package/is-plain-object) [![NPM monthly downloads](https://img.shields.io/npm/dm/is-plain-object.svg?style=flat)](https://npmjs.org/package/is-plain-object) [![NPM total downloads](https://img.shields.io/npm/dt/is-plain-object.svg?style=flat)](https://npmjs.org/package/is-plain-object) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/is-plain-object.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/is-plain-object)
 
-> Returns true if an object was created by the `Object` constructor.
+> Returns true if an object was created by the `Object` constructor, or Object.create(null).
 
 Please consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.
 

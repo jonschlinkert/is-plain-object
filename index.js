@@ -8,8 +8,9 @@
 import isObject from 'isobject';
 
 function isObjectObject(o) {
+  var type = Object.prototype.toString.call(o)
   return isObject(o) === true
-    && Object.prototype.toString.call(o) === '[object Object]';
+    && (type === '[object Object]' || type === '[object Null]');
 }
 
 export default function isPlainObject(o) {
@@ -19,7 +20,7 @@ export default function isPlainObject(o) {
 
   // If has modified constructor
   ctor = o.constructor;
-  if (typeof ctor !== 'function') return false;
+  if (ctor === undefined) return true;
 
   // If has modified prototype
   prot = ctor.prototype;

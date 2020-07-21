@@ -12,7 +12,8 @@ var trues = [
   Object.create({}),
   Object.create(Object.prototype),
   {foo: 'bar'},
-  {}
+  {},
+  Object.create(null)
 ];
 
 // Should return false with isPlainObject()
@@ -23,8 +24,7 @@ var falses = [
   ['foo', 'bar'],
   [],
   new Foo,
-  null,
-  Object.create(null)
+  null
 ];
 
 </script>

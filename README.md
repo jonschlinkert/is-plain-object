@@ -20,7 +20,7 @@ Use [isobject](https://github.com/jonschlinkert/isobject) if you only want to ch
 import isPlainObject from 'is-plain-object';
 ```
 
-**true** when created by the `Object` constructor.
+**true** when created by the `Object` constructor, or Object.create(null).
 
 ```js
 isPlainObject(Object.create({}));
@@ -30,6 +30,8 @@ isPlainObject(Object.create(Object.prototype));
 isPlainObject({foo: 'bar'});
 //=> true
 isPlainObject({});
+//=> true
+isPlainObject(null);
 //=> true
 ```
 
@@ -43,8 +45,6 @@ isPlainObject(['foo', 'bar']);
 isPlainObject([]);
 //=> false
 isPlainObject(new Foo);
-//=> false
-isPlainObject(null);
 //=> false
 isPlainObject(Object.create(null));
 //=> false

@@ -5,18 +5,14 @@
  * Released under the MIT License.
  */
 
-import isObject from 'isobject';
-
-function isObjectObject(o) {
-  var type = Object.prototype.toString.call(o)
-  return isObject(o) === true
-    && (type === '[object Object]' || type === '[object Null]');
+function isObject(o) {
+  return Object.prototype.toString.call(o) === '[object Object]';
 }
 
 export default function isPlainObject(o) {
   var ctor,prot;
 
-  if (isObjectObject(o) === false) return false;
+  if (isObject(o) === false) return false;
 
   // If has modified constructor
   ctor = o.constructor;
@@ -24,7 +20,7 @@ export default function isPlainObject(o) {
 
   // If has modified prototype
   prot = ctor.prototype;
-  if (isObjectObject(prot) === false) return false;
+  if (isObject(prot) === false) return false;
 
   // If constructor does not have an Object-specific method
   if (prot.hasOwnProperty('isPrototypeOf') === false) {

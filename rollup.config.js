@@ -1,20 +1,18 @@
 export default {
-  input: './index.js',
+  input: './is-plain-object.js',
   output: [
     {
       format: 'iife',
       file: 'browser/is-plain-object.js',
-      name: 'isPlainObject',
-      exports: 'default'
+      name: 'library',
     },
     {
       format: 'cjs',
-      file: 'index.cjs.js',
-      exports: 'default'
+      file: 'dist/is-plain-object.js',
     },
     {
-      format: 'es',
-      file: 'index.es.js'
+      format: 'esm',
+      file: 'dist/is-plain-object.mjs'
     }
   ]
 }

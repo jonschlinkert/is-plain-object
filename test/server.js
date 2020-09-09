@@ -6,7 +6,7 @@
  */
 
 import assert from 'assert';
-import isPlainObject from '../index.js';
+import { isPlainObject } from '../is-plain-object.js';
 
 describe('Same-Realm Server Tests', function() {
   it('should return `true` if the object is created by the `Object` constructor.', function() {

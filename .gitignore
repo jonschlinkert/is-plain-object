@@ -27,5 +27,4 @@ tmp
 TODO.md
 package-lock.json
 browser
-index.cjs.js
-index.es.js
+dist

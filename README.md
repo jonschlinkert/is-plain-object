@@ -31,6 +31,8 @@ const { isPlainObject } = require('is-plain-object');
 ```js
 isPlainObject(Object.create({}));
 //=> true
+isPlainObject(Object.create(null));
+//=> true
 isPlainObject(Object.create(Object.prototype));
 //=> true
 isPlainObject({foo: 'bar'});
@@ -51,8 +53,6 @@ isPlainObject(['foo', 'bar']);
 isPlainObject([]);
 //=> false
 isPlainObject(new Foo);
-//=> false
-isPlainObject(Object.create(null));
 //=> false
 ```
 

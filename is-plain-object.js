@@ -9,6 +9,25 @@ function isObject(o) {
   return Object.prototype.toString.call(o) === '[object Object]';
 }
 
+/**
+ * Returns if the encountered value is a native value that we can parse
+ * or process. This is basically the javascript typeof but with added
+ * support for null.
+ *
+ * @param {*} value
+ *
+ * @returns {boolean}
+ */
+function isPrimitive (value) {
+  if (value === null) {
+    return true;
+  }
+  return ['undefined', 'boolean', 'number', 'string', 'bigint'].includes(
+    typeof value
+  );
+}
+
+
 export function isPlainObject(o) {
   var ctor,prot;
 
@@ -16,7 +35,7 @@ export function isPlainObject(o) {
 
   // If has modified constructor
   ctor = o.constructor;
-  if (ctor === undefined) return true;
+  if (ctor === undefined || isPrimitive(ctor)) return true;
 
   // If has modified prototype
   prot = ctor.prototype;

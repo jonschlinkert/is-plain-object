@@ -25,6 +25,10 @@
   ],
   "exports": {
     ".": {
+      "types": {
+        "import": "./is-plain-object.d.mts",
+        "require": "./is-plain-object.d.cts"
+      },
       "import": "./dist/is-plain-object.mjs",
       "require": "./dist/is-plain-object.js"
     },

@@ -39,7 +39,6 @@
     "prepare": "npm run build"
   },
   "devDependencies": {
-    "gulp-format-md": "^1.0.0",
     "rollup": "^4.62.5"
   },
   "keywords": [
@@ -55,25 +54,5 @@
     "type",
     "typeof",
     "value"
-  ],
-  "verb": {
-    "toc": false,
-    "layout": "default",
-    "tasks": [
-      "readme"
-    ],
-    "plugins": [
-      "gulp-format-md"
-    ],
-    "related": {
-      "list": [
-        "is-number",
-        "isobject",
-        "kind-of"
-      ]
-    },
-    "lint": {
-      "reflinks": true
-    }
-  }
+  ]
 }

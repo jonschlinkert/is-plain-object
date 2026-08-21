@@ -8,7 +8,7 @@
 'use strict';
 
 var assert = require('assert');
-var isPlainObject = require('../dist/is-plain-object.js').isPlainObject;
+var isPlainObject = require('./dist/is-plain-object.js').isPlainObject;
 
 function Foo() {
   this.abc = {};

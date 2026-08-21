@@ -26,7 +26,8 @@
   "exports": {
     ".": {
       "import": "./dist/is-plain-object.mjs",
-      "require": "./dist/is-plain-object.js"
+      "require": "./dist/is-plain-object.js",
+      "types": "./is-plain-object.d.ts"
     },
     "./package.json": "./package.json"
   },

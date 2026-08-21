@@ -34,13 +34,13 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup is-plain-object.js --format cjs --file dist/is-plain-object.js && rollup is-plain-object.js --format esm --file dist/is-plain-object.mjs",
     "test": "node test.js",
-    "prepare": "rollup -c"
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "gulp-format-md": "^1.0.0",
-    "rollup": "^2.22.1"
+    "rollup": "^4.62.5"
   },
   "keywords": [
     "check",

@@ -5,27 +5,25 @@
  * Licensed under the MIT License.
  */
 
-import assert from 'assert';
-import { isPlainObject } from '../is-plain-object.js';
+'use strict';
 
-describe('Same-Realm Server Tests', function() {
-  it('should return `true` if the object is created by the `Object` constructor.', function() {
-    assert(isPlainObject(Object.create({})));
-    assert(isPlainObject(Object.create(Object.prototype)));
-    assert(isPlainObject({foo: 'bar'}));
-    assert(isPlainObject({}));
-    assert(isPlainObject(Object.create(null)));
-  });
+var assert = require('assert');
+var isPlainObject = require('../dist/is-plain-object.js').isPlainObject;
 
-  it('should return `false` if the object is not created by the `Object` constructor.', function() {
-    function Foo() {this.abc = {};};
+function Foo() {
+  this.abc = {};
+}
 
-    assert(!isPlainObject(/foo/));
-    assert(!isPlainObject(function() {}));
-    assert(!isPlainObject(1));
-    assert(!isPlainObject(['foo', 'bar']));
-    assert(!isPlainObject([]));
-    assert(!isPlainObject(new Foo));
-    assert(!isPlainObject(null));
-  });
-});
+assert(isPlainObject(Object.create({})));
+assert(isPlainObject(Object.create(Object.prototype)));
+assert(isPlainObject({ foo: 'bar' }));
+assert(isPlainObject({}));
+assert(isPlainObject(Object.create(null)));
+
+assert(!isPlainObject(/foo/));
+assert(!isPlainObject(function() {}));
+assert(!isPlainObject(1));
+assert(!isPlainObject(['foo', 'bar']));
+assert(!isPlainObject([]));
+assert(!isPlainObject(new Foo()));
+assert(!isPlainObject(null));

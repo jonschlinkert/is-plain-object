@@ -37,9 +37,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Run compatibility tests
-        run: node test/compat.js
-
-      - name: Run full test suite
-        if: matrix.node-version != '0.10' && matrix.node-version != '0.12'
+      - name: Run Node.js tests
         run: npm test
